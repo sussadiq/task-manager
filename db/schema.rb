@@ -10,26 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_14_124034) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_14_124441) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.boolean "completed"
-    t.date "due_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "project_id", null: false
-    t.index ["project_id"], name: "index_tasks_on_project_id"
-    t.index ["title"], name: "index_tasks_on_title"
-    t.index ["user_id"], name: "index_tasks_on_user_id"
-  end
+# Could not dump table "tasks" because of following StandardError
+#   Unknown type 'string' for column 'list'
+
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
